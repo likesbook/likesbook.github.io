@@ -1,7 +1,7 @@
 # profile
 
 - name:ikuno
-- like:radio,music,bread,camera,comic book
+- like:radio,music,camera,book,comedy
 - location:tokyo
 
 
