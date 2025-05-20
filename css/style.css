@@ -1,0 +1,187 @@
+html,
+body {
+  font-family: "Helvetica Neue", sans-serif;
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  padding: 20px 40px;
+  color: #333;
+  letter-spacing: 0.05vw;
+  overflow-x: hidden;
+}
+
+/* レコードと針だけ共通でサイズ調整したいならこっちを使う */
+.player {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.record {
+  position: absolute;
+  animation: spin 4s linear infinite;
+  animation-play-state: paused; /* 初期状態は止まってる */
+  pointer-events: none;
+}
+
+.tonearm {
+  position: absolute;
+  left: 70px;
+  transition: transform 1s ease;
+  transform: rotate(-6deg);
+  transform-origin: 50% 20%;
+  pointer-events: auto;
+  z-index: 10; /* レコードより前に出してクリックしやすく */
+}
+
+.tonearm.active {
+  transform: rotate(10deg);
+}
+
+.record.playing {
+  animation-play-state: running;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+h2 {
+  color: #264653;
+  font-size: 1.3em;
+  margin-top: 2em;
+}
+
+.left {
+  max-width: 200px;
+}
+
+h1 {
+  font-family: "Georgia";
+
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #2a9d8f;
+}
+
+.left p {
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
+}
+ul {
+  list-style: none;
+  padding-left: 0; /* 左の余白も消すなら */
+}
+li {
+  margin-bottom: 1em;
+}
+
+.right a {
+  display: block;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #111;
+  margin-bottom: 0.3rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.gallery img {
+  max-width: 300px;
+  height: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background: #eaeaea;
+  padding: 1rem;
+}
+
+img {
+  max-width: 300px;
+  height: auto;
+}
+
+/* オーバーレイ背景（メニュー開いたとき） */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* メニューボタン（3本線） */
+.menu-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1001;
+}
+.menu-button.hidden {
+  display: none;
+}
+
+/* ✕ボタン */
+.close-button {
+  font-size: 1.5rem;
+  text-align: right;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+/* スライドメニュー本体 */
+.slide-menu {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 250px;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease;
+  z-index: 1000;
+  padding: 2rem 1rem;
+}
+
+.slide-menu.open {
+  right: 0;
+}
+
+.slide-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.slide-menu li {
+  margin-bottom: 1rem;
+}
+
+.slide-menu a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+}

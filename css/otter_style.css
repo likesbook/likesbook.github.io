@@ -1,0 +1,153 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  padding: 20px 40px;
+
+  font-family: "Helvetica Neue", sans-serif;
+  display: flex;
+  height: 100vh;
+  color: #333;
+  letter-spacing: 0.05vw;
+  overflow-x: hidden;
+}
+
+.tank {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background: linear-gradient(to bottom, #e4faff, #b0efff);
+  overflow: hidden;
+}
+
+.otter {
+  position: absolute;
+  width: 500px;
+  top: 0;
+  left: 0;
+  transition: all 6s ease-in-out;
+}
+
+.otter2 {
+  position: absolute;
+  width: 450px;
+  top: 100;
+  left: 800;
+  transition: all 6s ease-in-out;
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.282);
+  pointer-events: none;
+  animation-duration: 8s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+@keyframes floatUp1 {
+  0% {
+    transform: translateY(0) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(0.5) translateX(-3px);
+    opacity: 0;
+  }
+}
+
+/* オーバーレイ背景（メニュー開いたとき） */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* メニューボタン（3本線） */
+.menu-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1001;
+}
+.menu-button.hidden {
+  display: none;
+}
+
+/* ✕ボタン */
+.close-button {
+  font-size: 1.5rem;
+  text-align: right;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+/* スライドメニュー本体 */
+.slide-menu {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 250px;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease;
+  z-index: 1000;
+  padding: 2rem 1rem;
+}
+
+.slide-menu.open {
+  right: 0;
+}
+
+.slide-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.slide-menu li {
+  margin-bottom: 1rem;
+}
+
+.slide-menu a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+}
+
+p {
+  font-family: "Helvetica Neue", sans-serif;
+  margin-top: 0;
+  padding-bottom: 10px;
+  color: #333;
+  letter-spacing: 0.23vw;
+  font-size: 0.9rem;
+  /* margin-bottom: 0.5rem; */
+  line-height: 2.5;
+}
+
+.caption {
+  background-color: #ffffff;
+}
+
+h2 {
+  margin-top: 0;
+  color: #264653;
+  font-size: 1.3em;
+  /* margin-top: 2em; */
+}
