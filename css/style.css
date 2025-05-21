@@ -4,8 +4,6 @@
 
 html,
 body {
-  font-family: "Helvetica Neue", sans-serif;
-  display: flex;
   height: 100vh;
   width: 100vw;
   margin: 0;
@@ -13,22 +11,26 @@ body {
   color: #333;
   letter-spacing: 0.05vw;
   overflow: hidden;
+  position: relative;
+}
+
+.container {
+  display: flex;
 }
 
 body {
   padding: 0;
 }
+
 /* レコードと針だけ共通でサイズ調整したいならこっちを使う */
 .player {
+  /* padding-top: 80px; */
   position: relative;
-  width: 300px;
-  height: 300px;
-  top: -350px;
-  left: 330px;
+  top: -70px;
 }
 
 img {
-  max-width: 400px;
+  width: 70vw;
   height: auto;
 }
 
@@ -41,7 +43,7 @@ img {
 
 .tonearm {
   position: absolute;
-  left: 90px;
+  left: 16vw;
   transition: transform 1s ease;
   transform: rotate(-6deg);
   transform-origin: 50% 20%;
@@ -70,7 +72,6 @@ img {
 }
 
 h1 {
-  font-family: "Georgia";
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   color: #2a9d8f;
@@ -101,22 +102,9 @@ h2 {
   margin-bottom: 1rem;
   color: #264653;
   margin-top: 2em;
+  border-bottom: 2px solid #2a9d8f;
+  padding-bottom: 0.5rem;
 }
-
-/* 
-.gallery {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-.gallery img {
-  max-width: 800px;
-  height: auto;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  background: #eaeaea;
-  padding: 1rem;
-} */
 
 /* オーバーレイ背景（メニュー開いたとき） */
 .overlay {
@@ -190,4 +178,70 @@ h2 {
   text-decoration: none;
   color: #333;
   font-size: 1rem;
+}
+
+a {
+  color: #2a9d8f;
+  text-decoration: none;
+  border-bottom: 1px solid #2a9d8f;
+  transition: all 0.3s ease;
+}
+a:hover {
+  background-color: #2a9d8f10;
+}
+
+@media (max-width: 768px) {
+  html,
+  body {
+    height: 100vh;
+    width: 90vw;
+    padding: 20px;
+    overflow: hidden;
+    margin: 0;
+  }
+
+  body {
+    padding: 0;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid #2a9d8f;
+  }
+
+  ul {
+    padding-left: 0;
+  }
+
+  li {
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+
+  .player {
+    width: 100vw;
+    height: auto;
+    margin-top: 1rem;
+  }
+
+  .menu-button {
+    font-size: 1.5rem;
+    top: 10px;
+    right: 10px;
+  }
+
+  .slide-menu {
+    width: 80vw;
+  }
+
+  .slide-menu a {
+    font-size: 1.2rem;
+  }
 }

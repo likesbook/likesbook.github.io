@@ -158,9 +158,48 @@ h2 {
 }
 
 h1 {
-  font-family: "Georgia";
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   color: #2a9d8f;
-  /* margin-top: 0; */
+}
+
+@media (max-width: 768px) {
+  html,
+  body {
+    height: 100vh;
+    width: 100vw;
+    padding: 20px;
+    overflow: hidden;
+    margin: 0;
+  }
+
+  body {
+    padding: 0;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid #2a9d8f;
+  }
+
+  .menu-button {
+    font-size: 1.5rem;
+    top: 10px;
+    right: 10px;
+  }
+
+  .slide-menu {
+    width: 80vw;
+  }
+
+  .slide-menu a {
+    font-size: 1.2rem;
+  }
 }
