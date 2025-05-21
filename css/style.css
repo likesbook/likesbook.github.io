@@ -12,6 +12,7 @@ body {
   letter-spacing: 0.05vw;
   overflow: hidden;
   position: relative;
+  font-family: "Helvetica Neue", sans-serif;
 }
 
 .container {
@@ -200,6 +201,10 @@ a:hover {
     margin: 0;
   }
 
+  .container {
+    display: contents;
+  }
+
   body {
     padding: 0;
   }
@@ -239,6 +244,7 @@ a:hover {
 
   .slide-menu {
     width: 80vw;
+    right: -500px;
   }
 
   .slide-menu a {
