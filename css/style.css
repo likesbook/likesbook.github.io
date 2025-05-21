@@ -1,20 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   font-family: "Helvetica Neue", sans-serif;
   display: flex;
   height: 100vh;
+  width: 100vw;
   margin: 0;
-  padding: 20px 40px;
+  padding: 70px;
   color: #333;
   letter-spacing: 0.05vw;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
+body {
+  padding: 0;
+}
 /* レコードと針だけ共通でサイズ調整したいならこっちを使う */
 .player {
   position: relative;
   width: 300px;
   height: 300px;
+  top: -350px;
+  left: 330px;
+}
+
+img {
+  max-width: 400px;
+  height: auto;
 }
 
 .record {
@@ -26,7 +41,7 @@ body {
 
 .tonearm {
   position: absolute;
-  left: 70px;
+  left: 90px;
   transition: transform 1s ease;
   transform: rotate(-6deg);
   transform-origin: 50% 20%;
@@ -50,19 +65,12 @@ body {
   }
 }
 
-h2 {
-  color: #264653;
-  font-size: 1.3em;
-  margin-top: 2em;
-}
-
 .left {
   max-width: 200px;
 }
 
 h1 {
   font-family: "Georgia";
-
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   color: #2a9d8f;
@@ -91,8 +99,11 @@ li {
 h2 {
   font-size: 1.2rem;
   margin-bottom: 1rem;
+  color: #264653;
+  margin-top: 2em;
 }
 
+/* 
 .gallery {
   display: flex;
   justify-content: center;
@@ -100,17 +111,12 @@ h2 {
 }
 
 .gallery img {
-  max-width: 300px;
+  max-width: 800px;
   height: auto;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   background: #eaeaea;
   padding: 1rem;
-}
-
-img {
-  max-width: 300px;
-  height: auto;
-}
+} */
 
 /* オーバーレイ背景（メニュー開いたとき） */
 .overlay {
